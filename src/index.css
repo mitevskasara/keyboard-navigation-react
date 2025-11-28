@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 1em;
+}
+
+table.aria-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.aria-table th,
+table.aria-table td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  text-align: left;
+}
+
+table.aria-table th {
+  background-color: #f4b400;
+  color: white;
+}
+
+table.aria-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table.aria-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
