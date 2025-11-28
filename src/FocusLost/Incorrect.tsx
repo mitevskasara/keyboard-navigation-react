@@ -5,6 +5,7 @@ const options = ['Option 1', 'Option 2', 'Option 3'];
 function Dropdown() {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(0);
+  const [message, setMessage] = useState('');
 
   const toggleDropdown = () => setOpen((prev) => !prev);
 
@@ -33,7 +34,7 @@ function Dropdown() {
               }}
               onMouseEnter={() => setSelectedItem(index)}
               onClick={() => {
-                alert(`Selected ${option}`);
+                setMessage(`You selected: ${options[selectedItem]}`);
                 setOpen(false);
               }}
             >
@@ -42,6 +43,9 @@ function Dropdown() {
           ))}
         </ul>
       )}
+      <p>
+        {message}
+      </p>
     </div>
   );
 }

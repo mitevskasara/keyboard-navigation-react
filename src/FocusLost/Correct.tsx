@@ -5,6 +5,7 @@ const options = ['Option 1', 'Option 2', 'Option 3'];
 function Dropdown() {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(0);
+  const [message, setMessage] = useState('');
   const buttonRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -24,12 +25,12 @@ function Dropdown() {
       buttonRef.current?.focus();
     } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      alert(`Selected ${options[selectedItem]}`);
+      setMessage(`You selected: ${options[selectedItem]}`);
       setOpen(false);
       buttonRef.current?.focus();
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      alert(`Selected ${options[selectedItem]}`);
+      setMessage(`You selected: ${options[selectedItem]}`);
       setOpen(false);
       buttonRef.current?.focus();
     }
@@ -88,6 +89,9 @@ function Dropdown() {
           ))}
         </ul>
       )}
+      <p>
+        {message}
+      </p>
     </div>
   );
 }
